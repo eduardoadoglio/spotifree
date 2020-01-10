@@ -26,6 +26,7 @@ dependencies:
   youtube_api: ^0.7.2
   youtube_extractor: ^1.0.4
   path_provider: ^1.5.1
+  sqflite: ^1.1.5
 
 dev_dependencies:
   flutter_test:

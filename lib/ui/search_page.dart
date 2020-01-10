@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
+import 'package:fuck_spotify/helpers/songHelper.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:youtube_api/youtube_api.dart';
@@ -14,7 +15,7 @@ class searchPage extends StatefulWidget {
 
 class searchPageState extends State<searchPage> {
   static int max = 10;
-  static String key; // coloca a tua key aqui nao vai rouba minha cota nao
+  static String key = "AIzaSyCTRdkP38K5gMspFV92QWedprDCa2ApaIY"; // coloca a tua key aqui nao vai rouba minha cota nao
 
   YoutubeAPI ytApi = new YoutubeAPI(key, maxResults: max);
   List<YT_API> ytResult = [];
@@ -24,7 +25,10 @@ class searchPageState extends State<searchPage> {
 
   var extractor = YouTubeExtractor();
   var songUrl;
-  Map<String, List<String>> _likedVideos = Map();
+
+  SongHelper helper = SongHelper();
+
+
 
   call_API(query) async {
     print('UI callled');
@@ -54,19 +58,6 @@ class searchPageState extends State<searchPage> {
     return json.decode(likedJson);
   }
 
-
-  File _getFile(){
-    final directory = getApplicationDocumentsDirectory();
-    return File("${directory}/data.json");
-  }
-
-  Future _saveFile() async{
-    String likedJson = json.encode(_likedVideos);
-    File file = _getFile();
-
-    return await file.writeAsString(likedJson);
-
-  }
   @override
   void initState() {
     super.initState();
