@@ -14,7 +14,7 @@ class searchPage extends StatefulWidget {
 
 class searchPageState extends State<searchPage> {
   static int max = 10;
-  static String key = "AIzaSyCTRdkP38K5gMspFV92QWedprDCa2ApaIY"; // ** ENTER YOUTUBE API KEY HERE **
+  static String key; // coloca a tua key aqui nao vai rouba minha cota nao
 
   YoutubeAPI ytApi = new YoutubeAPI(key, maxResults: max);
   List<YT_API> ytResult = [];
