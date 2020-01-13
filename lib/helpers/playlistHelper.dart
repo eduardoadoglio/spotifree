@@ -9,13 +9,13 @@ final String nomeColumn = "nomeColumn";
 final String descColumn = "descColumn";
 final String songColumn = "songColumn";
 
-class playlistHelper{
+class PlaylistHelper{
 
-  static final playlistHelper _instance = playlistHelper.internal();
+  static final PlaylistHelper _instance = PlaylistHelper.internal();
 
-  factory playlistHelper() => _instance;
+  factory PlaylistHelper() => _instance;
 
-  playlistHelper.internal();
+  PlaylistHelper.internal();
 
   Database _db;
 

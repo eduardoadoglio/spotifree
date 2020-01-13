@@ -136,8 +136,12 @@ class Song{
     if(id != null){
       map[idColumn] = id;
     }
-
     return map;
+  }
+
+  @override
+  String toString() {
+    print("Nome: $nome, ytId: $ytId, Artista: $artista, Url: $url, Thumb: $thumb");
   }
 
 }
